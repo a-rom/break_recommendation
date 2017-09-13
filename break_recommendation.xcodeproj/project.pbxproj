@@ -12,6 +12,13 @@
 		CB08ACE41F68C4A8009C40DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACE21F68C4A8009C40DB /* Main.storyboard */; };
 		CB08ACE61F68C4A8009C40DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACE51F68C4A8009C40DB /* Assets.xcassets */; };
 		CB08ACE91F68C4A8009C40DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACE71F68C4A8009C40DB /* LaunchScreen.storyboard */; };
+		CB08ACF21F68D4ED009C40DB /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB08ACF11F68D4ED009C40DB /* CoreImage.framework */; };
+		CB08ACF41F68D545009C40DB /* obamachange-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACF31F68D545009C40DB /* obamachange-1.jpg */; };
+		CB08ACF61F690D02009C40DB /* glasses.png in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACF51F690D02009C40DB /* glasses.png */; };
+		CB08ACF81F690DDB009C40DB /* matsuge.png in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACF71F690DDB009C40DB /* matsuge.png */; };
+		CB08ACFA1F690EF7009C40DB /* hige_100.png in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACF91F690EF7009C40DB /* hige_100.png */; };
+		CB08ACFC1F690F9C009C40DB /* ebizou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACFB1F690F9C009C40DB /* ebizou.jpg */; };
+		CB08ACFE1F691029009C40DB /* que-1165952091.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		CB08ACE51F68C4A8009C40DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB08ACE81F68C4A8009C40DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB08ACEA1F68C4A8009C40DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB08ACF11F68D4ED009C40DB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		CB08ACF31F68D545009C40DB /* obamachange-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "obamachange-1.jpg"; sourceTree = "<group>"; };
+		CB08ACF51F690D02009C40DB /* glasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glasses.png; sourceTree = "<group>"; };
+		CB08ACF71F690DDB009C40DB /* matsuge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matsuge.png; sourceTree = "<group>"; };
+		CB08ACF91F690EF7009C40DB /* hige_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hige_100.png; sourceTree = "<group>"; };
+		CB08ACFB1F690F9C009C40DB /* ebizou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ebizou.jpg; sourceTree = "<group>"; };
+		CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "que-1165952091.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB08ACF21F68D4ED009C40DB /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +55,7 @@
 			children = (
 				CB08ACDD1F68C4A8009C40DB /* break_recommendation */,
 				CB08ACDC1F68C4A8009C40DB /* Products */,
+				CB08ACF01F68D4ED009C40DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +72,26 @@
 			children = (
 				CB08ACDE1F68C4A8009C40DB /* AppDelegate.swift */,
 				CB08ACE01F68C4A8009C40DB /* ViewController.swift */,
+				CB08ACF91F690EF7009C40DB /* hige_100.png */,
+				CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */,
+				CB08ACF71F690DDB009C40DB /* matsuge.png */,
+				CB08ACFB1F690F9C009C40DB /* ebizou.jpg */,
+				CB08ACF51F690D02009C40DB /* glasses.png */,
+				CB08ACF31F68D545009C40DB /* obamachange-1.jpg */,
 				CB08ACE21F68C4A8009C40DB /* Main.storyboard */,
 				CB08ACE51F68C4A8009C40DB /* Assets.xcassets */,
 				CB08ACE71F68C4A8009C40DB /* LaunchScreen.storyboard */,
 				CB08ACEA1F68C4A8009C40DB /* Info.plist */,
 			);
 			path = break_recommendation;
+			sourceTree = "<group>";
+		};
+		CB08ACF01F68D4ED009C40DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB08ACF11F68D4ED009C40DB /* CoreImage.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +154,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB08ACF81F690DDB009C40DB /* matsuge.png in Resources */,
+				CB08ACFE1F691029009C40DB /* que-1165952091.jpeg in Resources */,
+				CB08ACF61F690D02009C40DB /* glasses.png in Resources */,
+				CB08ACFA1F690EF7009C40DB /* hige_100.png in Resources */,
+				CB08ACF41F68D545009C40DB /* obamachange-1.jpg in Resources */,
 				CB08ACE91F68C4A8009C40DB /* LaunchScreen.storyboard in Resources */,
 				CB08ACE61F68C4A8009C40DB /* Assets.xcassets in Resources */,
 				CB08ACE41F68C4A8009C40DB /* Main.storyboard in Resources */,
+				CB08ACFC1F690F9C009C40DB /* ebizou.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
