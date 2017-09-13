@@ -19,6 +19,7 @@
 		CB08ACFA1F690EF7009C40DB /* hige_100.png in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACF91F690EF7009C40DB /* hige_100.png */; };
 		CB08ACFC1F690F9C009C40DB /* ebizou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACFB1F690F9C009C40DB /* ebizou.jpg */; };
 		CB08ACFE1F691029009C40DB /* que-1165952091.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */; };
+		CB08AD001F692AE2009C40DB /* FaceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08ACFF1F692AE2009C40DB /* FaceTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CB08ACF91F690EF7009C40DB /* hige_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hige_100.png; sourceTree = "<group>"; };
 		CB08ACFB1F690F9C009C40DB /* ebizou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ebizou.jpg; sourceTree = "<group>"; };
 		CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "que-1165952091.jpeg"; sourceTree = "<group>"; };
+		CB08ACFF1F692AE2009C40DB /* FaceTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			children = (
 				CB08ACDE1F68C4A8009C40DB /* AppDelegate.swift */,
 				CB08ACE01F68C4A8009C40DB /* ViewController.swift */,
+				CB08ACFF1F692AE2009C40DB /* FaceTracker.swift */,
 				CB08ACF91F690EF7009C40DB /* hige_100.png */,
 				CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */,
 				CB08ACF71F690DDB009C40DB /* matsuge.png */,
@@ -175,6 +178,7 @@
 			files = (
 				CB08ACE11F68C4A8009C40DB /* ViewController.swift in Sources */,
 				CB08ACDF1F68C4A8009C40DB /* AppDelegate.swift in Sources */,
+				CB08AD001F692AE2009C40DB /* FaceTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RKP5LRF3XR;
 				INFOPLIST_FILE = break_recommendation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ayumu.break-recommendation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RKP5LRF3XR;
 				INFOPLIST_FILE = break_recommendation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ayumu.break-recommendation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
