@@ -9,9 +9,15 @@
 import UIKit
 import AVFoundation
 
+var count = 0
+
 class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
     let captureSession = AVCaptureSession()
-    let videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+    let videoDevice = AVCaptureDevice.defaultDevice(
+        withDeviceType: .builtInWideAngleCamera,
+        mediaType: AVMediaTypeVideo,
+        position:.front)
+    
     let audioDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
     
     var videoOutput = AVCaptureVideoDataOutput()
@@ -57,6 +63,9 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
         
         self.view.layer.addSublayer(videoLayer)
         
+        
+        
+        
         //カメラ向き
         for connection in self.videoOutput.connections {
             if let conn = connection as? AVCaptureConnection {
@@ -98,8 +107,14 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
             let ciimage:CIImage! = CIImage(image: image)
             
             //CIDetectorAccuracyHighだと高精度（使った感じは遠距離による判定の精度）だが処理が遅くなる
-            let detector : CIDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options:[CIDetectorAccuracy: CIDetectorAccuracyLow] )!
-            let faces : NSArray = detector.features(in: ciimage) as NSArray
+            let detector : CIDetector = CIDetector(
+                ofType: CIDetectorTypeFace,
+                context: nil,
+                options:[CIDetectorAccuracy: CIDetectorAccuracyHigh] )!
+            
+            let options = [CIDetectorSmile : true, CIDetectorEyeBlink : true]
+            
+            let faces : NSArray = detector.features(in: ciimage, options: options) as NSArray
             
             if faces.count != 0
             {
@@ -112,6 +127,7 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
                     let widthPer = (self.view.bounds.width/image.size.width)
                     let heightPer = (self.view.bounds.height/image.size.height)
                     
+                    
                     // UIKitは左上に原点があるが、CoreImageは左下に原点があるので揃える
                     faceRect.origin.y = image.size.height - faceRect.origin.y - faceRect.size.height
                     
@@ -121,10 +137,18 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
                     faceRect.size.width = faceRect.size.width * widthPer
                     faceRect.size.height = faceRect.size.height * heightPer
                     
+                    if (feature as AnyObject).leftEyeClosed == true {
+                        count = count + 1
+                        
+                        
+                        }
+                    
                     rects.append(faceRect)
                 }
                 self.findface(rects)
             }
+            
+            
         })
     }
     

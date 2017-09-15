@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         faceTracker = FaceTracker(view: self.cameraView, findface:{arr in
             let rect = arr[0];//一番の顔だけ使う
             self.rectView.frame = rect;//四角い枠を顔の位置に移動する
+        print(String(count))
         })
     }
 
