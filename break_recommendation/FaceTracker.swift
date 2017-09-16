@@ -9,7 +9,10 @@
 import UIKit
 import AVFoundation
 
-var count = 0
+var COUNT = 0
+var REST_COUNT = 0
+
+
 
 class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
     let captureSession = AVCaptureSession()
@@ -138,7 +141,7 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
                     faceRect.size.height = faceRect.size.height * heightPer
                     
                     if (feature as AnyObject).leftEyeClosed == true {
-                        count = count + 1
+                        COUNT = COUNT + 1
                         
                         
                         }

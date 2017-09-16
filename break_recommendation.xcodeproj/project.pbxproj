@@ -20,6 +20,7 @@
 		CB08ACFC1F690F9C009C40DB /* ebizou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACFB1F690F9C009C40DB /* ebizou.jpg */; };
 		CB08ACFE1F691029009C40DB /* que-1165952091.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */; };
 		CB08AD001F692AE2009C40DB /* FaceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08ACFF1F692AE2009C40DB /* FaceTracker.swift */; };
+		CB08AD021F6D2919009C40DB /* WorkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08AD011F6D2919009C40DB /* WorkingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		CB08ACFB1F690F9C009C40DB /* ebizou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ebizou.jpg; sourceTree = "<group>"; };
 		CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "que-1165952091.jpeg"; sourceTree = "<group>"; };
 		CB08ACFF1F692AE2009C40DB /* FaceTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceTracker.swift; sourceTree = "<group>"; };
+		CB08AD011F6D2919009C40DB /* WorkingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				CB08ACDE1F68C4A8009C40DB /* AppDelegate.swift */,
 				CB08ACE01F68C4A8009C40DB /* ViewController.swift */,
+				CB08AD011F6D2919009C40DB /* WorkingViewController.swift */,
 				CB08ACFF1F692AE2009C40DB /* FaceTracker.swift */,
 				CB08ACF91F690EF7009C40DB /* hige_100.png */,
 				CB08ACFD1F691029009C40DB /* que-1165952091.jpeg */,
@@ -178,6 +181,7 @@
 			files = (
 				CB08ACE11F68C4A8009C40DB /* ViewController.swift in Sources */,
 				CB08ACDF1F68C4A8009C40DB /* AppDelegate.swift in Sources */,
+				CB08AD021F6D2919009C40DB /* WorkingViewController.swift in Sources */,
 				CB08AD001F692AE2009C40DB /* FaceTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
