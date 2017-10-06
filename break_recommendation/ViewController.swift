@@ -13,8 +13,7 @@ import Firebase
 var databaseRef:DatabaseReference!
 let deviceId = UIDevice.current.identifierForVendor!.uuidString
 let formatter = DateFormatter()
-var date = Date()
-var dateStr = formatter.string(from: date)
+
 
 
 
@@ -42,6 +41,8 @@ class ViewController: UIViewController {
         })
     //Timer.scheduledTimer(timeInterval: 10.00, target: self, selector: #selector(self.onUpdate), userInfo: nil, repeats: false)
         
+    Timer.scheduledTimer(timeInterval: 1.00, target: self, selector: #selector(self.moveFace), userInfo: nil, repeats: true)
+        
         
         
     }
@@ -54,9 +55,23 @@ class ViewController: UIViewController {
         
     
     }
+    
+
+    func moveFace(){
+        let date = Date()
+        let dateStr = formatter.string(from: date)
+        formatter.dateFormat = "MM-dd-HH-mm-ss"
+        let moveFace:[String:Any] = ["time":dateStr,"origin_x": faceRect.origin.x,"origin_y": faceRect.origin.y];
+        databaseRef.childByAutoId().child(deviceId).setValue(moveFace)
+        
+        
+        
+    }
 
     
     @IBAction func tired(_ sender: Any) {
+        let date = Date()
+        let dateStr = formatter.string(from: date)
         formatter.dateFormat = "MM-dd-HH-mm-ss"
         let callTired:[String:Any] = ["time":dateStr,"tired": TIRED];
         TIRED = 1

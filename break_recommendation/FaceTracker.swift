@@ -11,6 +11,8 @@ import AVFoundation
 var TIRED = 0
 var COUNT = 0
 var REST_COUNT = 0
+var faceRect = CGRect()
+
 
 
 
@@ -125,10 +127,12 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
             {
                 var rects = Array<CGRect>();
                 var _ : CIFaceFeature = CIFaceFeature()
+                formatter.dateFormat = "MM-dd-HH-mm-ss"
                 for feature in faces {
                     
                     // 座標変換
-                    var faceRect : CGRect = (feature as AnyObject).bounds
+                    //var faceRect : CGRect = (feature as AnyObject).bounds
+                    faceRect = (feature as AnyObject).bounds
                     let widthPer = (self.view.bounds.width/image.size.width)
                     let heightPer = (self.view.bounds.height/image.size.height)
                     
@@ -142,9 +146,14 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
                     faceRect.size.width = faceRect.size.width * widthPer
                     faceRect.size.height = faceRect.size.height * heightPer
                     
+                    
+                    
+                    
                     if (feature as AnyObject).leftEyeClosed == true {
+                        let date = Date()
+                        let dateStr = formatter.string(from: date)
                         formatter.dateFormat = "MM-dd-HH-mm-ss"
-                        let eyeClosedCount:[String:Any] = ["time":dateStr,"count": COUNT];
+                        let eyeClosedCount:[String:Any] = ["time":dateStr,"eye_closed": COUNT];
                         COUNT = 1
                         databaseRef.childByAutoId().child(deviceId).setValue(eyeClosedCount)
                         
@@ -158,6 +167,8 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
             
             
         })
+
+
     }
     
 }
