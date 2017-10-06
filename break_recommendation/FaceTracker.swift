@@ -8,9 +8,11 @@
 
 import UIKit
 import AVFoundation
-
+var TIRED = 0
 var COUNT = 0
 var REST_COUNT = 0
+
+
 
 
 
@@ -141,7 +143,10 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
                     faceRect.size.height = faceRect.size.height * heightPer
                     
                     if (feature as AnyObject).leftEyeClosed == true {
-                        COUNT = COUNT + 1
+                        formatter.dateFormat = "MM-dd-HH-mm-ss"
+                        let eyeClosedCount:[String:Any] = ["time":dateStr,"count": COUNT];
+                        COUNT = 1
+                        databaseRef.childByAutoId().child(deviceId).setValue(eyeClosedCount)
                         
                         
                         }

@@ -8,11 +8,23 @@
 
 import UIKit
 import CoreImage
+import Firebase
+
+var databaseRef:DatabaseReference!
+let deviceId = UIDevice.current.identifierForVendor!.uuidString
+let formatter = DateFormatter()
+var date = Date()
+var dateStr = formatter.string(from: date)
+
+
 
 
 class ViewController: UIViewController {
    
     @IBOutlet weak var number: UILabel!
+    
+    @IBOutlet weak var tired: UIButton!
+    
     
     var faceTracker:FaceTracker? = nil;
     @IBOutlet var cameraView :UIView!//viewController上に一つviewを敷いてそれと繋いでおく
@@ -20,6 +32,7 @@ class ViewController: UIViewController {
     var rectView = UIView()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        databaseRef = Database.database().reference()
         self.rectView.layer.borderWidth = 3//四角い枠を用意しておく
         self.view.addSubview(self.rectView)
         faceTracker = FaceTracker(view: self.cameraView, findface:{arr in
@@ -27,7 +40,10 @@ class ViewController: UIViewController {
             self.rectView.frame = rect;//四角い枠を顔の位置に移動する
         
         })
-    Timer.scheduledTimer(timeInterval: 10.00, target: self, selector: #selector(self.onUpdate), userInfo: nil, repeats: false)
+    //Timer.scheduledTimer(timeInterval: 10.00, target: self, selector: #selector(self.onUpdate), userInfo: nil, repeats: false)
+        
+        
+        
     }
     
     func onUpdate(){
@@ -38,12 +54,16 @@ class ViewController: UIViewController {
         
     
     }
+
     
-    @IBAction func start_working(_ sender: Any) {
-       COUNT = 0
+    @IBAction func tired(_ sender: Any) {
+        formatter.dateFormat = "MM-dd-HH-mm-ss"
+        let callTired:[String:Any] = ["time":dateStr,"tired": TIRED];
+        TIRED = 1
+        databaseRef.childByAutoId().child(deviceId).setValue(callTired)
+        
         
     }
-
 
 
 }
